@@ -27,7 +27,8 @@
                 foreach($result as $row) {
              ?>
                 <h2></h2>
-                <li><?=$row['menu_name']?> <?=$row['price']?></li>
+                <li><?=$row['menu_name']?> <?=$row['price']?> 
+                <a href="/option.php?id=<?=$row['id']?>">담기</a> </li>
     <?php
      }
 ?>
@@ -41,7 +42,8 @@
                 foreach($result as $row) {
              ?>
                 <h2></h2>
-                <li><?=$row['menu_name']?> <?=$row['price']?></li>
+                <li><?=$row['menu_name']?> <?=$row['price']?>
+                <a href="/option.php?id=<?=$row['id']?>">담기</a></li>
              <?php
                 }
              ?>
@@ -55,7 +57,8 @@
                 foreach($result as $row) {
              ?>
                 <h2></h2>
-                <li><?=$row['menu_name']?> <?=$row['price']?></li>
+                <li><?=$row['menu_name']?> <?=$row['price']?>
+                <a href="/option.php?id=<?=$row['id']?>">담기</a></li>
              <?php
                 }
              ?>
@@ -69,7 +72,8 @@
                 foreach($result as $row) {
              ?>
                 <h2></h2>
-                <li><?=$row['menu_name']?> <?=$row['price']?></li>
+                <li><?=$row['menu_name']?> <?=$row['price']?>
+                <a href="/option.php?id=<?=$row['id']?>">담기</a></li>
              <?php
                 }
              ?>
@@ -83,7 +87,8 @@
                 foreach($result as $row) {
              ?>
                 <h2></h2>
-                <li><?=$row['menu_name']?> <?=$row['price']?></li>
+                <li><?=$row['menu_name']?> <?=$row['price']?>
+                <a href="/option.php?id=<?=$row['id']?>">담기</a></li>
              <?php
                 }
              ?>
