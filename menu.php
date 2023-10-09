@@ -26,9 +26,13 @@
     $result = $mysqli->query($sql);
                 foreach($result as $row) {
              ?>
+             <form action="option.php" method="get">
                 <h2></h2>
                 <li><?=$row['menu_name']?> <?=$row['price']?> 
-                <a href="/option.php?id=<?=$row['id']?>">담기</a> </li>
+                  <input type="hidden" name="id" value="<?=$row['id']?>">
+                <button type="submit">담기</button>
+                </form>
+               <!-- <a href="/option.php?id=<?=$row['id']?>">담기</a> </li> -->
     <?php
      }
 ?>
@@ -41,9 +45,13 @@
     $result = $mysqli->query($sql);
                 foreach($result as $row) {
              ?>
+                 <form action="option.php" method="get">
                 <h2></h2>
-                <li><?=$row['menu_name']?> <?=$row['price']?>
-                <a href="/option.php?id=<?=$row['id']?>">담기</a></li>
+                <li><?=$row['menu_name']?> <?=$row['price']?> 
+                  <input type="hidden" name="id" value="<?=$row['id']?>">
+                <button type="submit">담기</button>
+                </form>
+               <!-- <a href="/option.php?id=<?=$row['id']?>">담기</a> </li> -->
              <?php
                 }
              ?>
@@ -56,9 +64,13 @@
     $result = $mysqli->query($sql);
                 foreach($result as $row) {
              ?>
+                  <form action="option.php" method="get">
                 <h2></h2>
-                <li><?=$row['menu_name']?> <?=$row['price']?>
-                <a href="/option.php?id=<?=$row['id']?>">담기</a></li>
+                <li><?=$row['menu_name']?> <?=$row['price']?> 
+                  <input type="hidden" name="id" value="<?=$row['id']?>">
+                <button type="submit">담기</button>
+                </form>
+               <!-- <a href="/option.php?id=<?=$row['id']?>">담기</a> </li> -->
              <?php
                 }
              ?>
@@ -71,9 +83,13 @@
     $result = $mysqli->query($sql);
                 foreach($result as $row) {
              ?>
+                 <form action="option.php" method="get">
                 <h2></h2>
-                <li><?=$row['menu_name']?> <?=$row['price']?>
-                <a href="/option.php?id=<?=$row['id']?>">담기</a></li>
+                <li><?=$row['menu_name']?> <?=$row['price']?> 
+                  <input type="hidden" name="id" value="<?=$row['id']?>">
+                <button type="submit">담기</button>
+                </form>
+               <!-- <a href="/option.php?id=<?=$row['id']?>">담기</a> </li> -->
              <?php
                 }
              ?>
@@ -86,9 +102,13 @@
     $result = $mysqli->query($sql);
                 foreach($result as $row) {
              ?>
+                <form action="option.php" method="get">
                 <h2></h2>
-                <li><?=$row['menu_name']?> <?=$row['price']?>
-                <a href="/option.php?id=<?=$row['id']?>">담기</a></li>
+                <li><?=$row['menu_name']?> <?=$row['price']?> 
+                  <input type="hidden" name="id" value="<?=$row['id']?>">
+                <button type="submit">담기</button>
+                </form>
+               <!-- <a href="/option.php?id=<?=$row['id']?>">담기</a> </li> -->
              <?php
                 }
              ?>

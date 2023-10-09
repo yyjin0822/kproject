@@ -15,11 +15,17 @@
         // 연결 생성
         $mysqli = new mysqli($host, $user, $pass, $db);
         
-        $select =  "select * from kproject.menu where id =' " . $_GET['id'] . " ' ";
+        $select =  "select * from kproject.menu where id =' " . $_GET["id"] . " ' ";
         $array =  mysqli_query($mysqli, $select);
         
-        if(isset($_POST["id"])) {
-            $sql = "insert into kproject.cart values '" . $_POST["cart_menu_name"] . "', '" . $_POST["cart_price"] . "', '" . $_POST["cart_shot"] . "', '" . $_POST["cart_tem"] . "', '" . $_POST["cart_num"] ."' " ;
+        if(isset($_GET["menu_name"])) {
+            $menu_name = $mysqli->real_escape_string($_GET["menu_name"]);
+            $price = $mysqli->real_escape_string($_GET["price"]);
+            $shot = $mysqli->real_escape_string($_GET["shot"]);
+            $tem = $mysqli->real_escape_string($_GET["tem"]);
+            $num = $mysqli->real_escape_string($_GET["num"]);
+            $id = $mysqli->real_escape_string($_GET["id"]);
+            $sql = "INSERT INTO kproject.cart (id,cart_menu_name, cart_price, cart_shot, cart_tem, cart_num) VALUES ('$id','$menu_name', '$price', '$shot', '$tem', '$num')";
             $result = mysqli_query($mysqli, $sql);
 
 			if($result != null) {
@@ -28,21 +34,17 @@
 			}
 		}
 
-        // // $_GET['id'] 값 확인
-        // if(isset($_GET['id'])) {
-        //     $id = $mysqli->real_escape_string($_GET['id']);
-        //     $select = "select * from kproject.menu where id ='$id'";
-        //     $array =  mysqli_query($mysqli, $select);
-        // } else {
-        //     echo "ID 값이 없습니다.";
-        //     exit;
-        // }
-
     ?>
 
+    
+
+
 <?php foreach ($array as $row) { ?>
-    <form action="/option.php" method="post">
+    <form action="option.php" method="get">
     <h1><?=$row['menu_name']?></h1>
+
+    <input type="hidden" name="id" value="<?=$row['id']?>">
+    <input type="hidden" name="menu_name" value="<?=$row['menu_name']?>">
 
     <h2>가격</h2>
     <label><input type="radio" name="price" value=<?=$row['price']?>>가격</label>
@@ -57,7 +59,7 @@
     <label><input type="radio" name="shot" value=1>1샷추가</label>
     
     <h2>수량</h2>
-    <input type="number" name="number" placeholder="수량을 입력하세요">
+    <input type="number" name="num" placeholder="수량을 입력하세요">
 
     <input type="submit" value="담기">
     </form>
